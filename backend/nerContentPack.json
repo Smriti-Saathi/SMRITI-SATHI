@@ -1,0 +1,145 @@
+{
+  "_contentReviewNotice": "PLACEHOLDER CONTENT PACK: This dataset is a preliminary demonstration set and should be reviewed with someone from the target region (Northeast India / Assam) for cultural accuracy, spelling, and local appropriateness before any real deployment.",
+  "items": [
+    {
+      "id": "ner_food_01",
+      "label_en": "Joha Rice",
+      "label_as": "জহা চাউল",
+      "imageAsset": "joha_rice.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_02",
+      "label_en": "Assam Tea",
+      "label_as": "অসমীয়া চাহ",
+      "imageAsset": "assam_tea.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_03",
+      "label_en": "Pitha",
+      "label_as": "পিঠা",
+      "imageAsset": "pitha.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_04",
+      "label_en": "Laru",
+      "label_as": "লাৰু",
+      "imageAsset": "laru.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_05",
+      "label_en": "Bao Chaul",
+      "label_as": "বাও চাউল",
+      "imageAsset": "bao_rice.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_06",
+      "label_en": "Xolok (Bamboo Shoot)",
+      "label_as": "খাহতি বাঁহগাজ",
+      "imageAsset": "bamboo_shoot.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_07",
+      "label_en": "Tenga Maach (Fish Curry)",
+      "label_as": "মাছৰ টেঙা জোল",
+      "imageAsset": "tenga_fish.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_food_08",
+      "label_en": "Khar",
+      "label_as": "খাৰ",
+      "imageAsset": "khar.png",
+      "category": "food"
+    },
+    {
+      "id": "ner_cloth_01",
+      "label_en": "Gamocha",
+      "label_as": "গামোচা",
+      "imageAsset": "gamocha.png",
+      "category": "clothing"
+    },
+    {
+      "id": "ner_cloth_02",
+      "label_en": "Mekhela Chador",
+      "label_as": "মেখেলা চাদৰ",
+      "imageAsset": "mekhela_chador.png",
+      "category": "clothing"
+    },
+    {
+      "id": "ner_cloth_03",
+      "label_en": "Aronai",
+      "label_as": "আৰনাই",
+      "imageAsset": "aronai.png",
+      "category": "clothing"
+    },
+    {
+      "id": "ner_cloth_04",
+      "label_en": "Riha",
+      "label_as": "ৰিহা",
+      "imageAsset": "riha.png",
+      "category": "clothing"
+    },
+    {
+      "id": "ner_cloth_05",
+      "label_en": "Endi Silk Shawl",
+      "label_as": "এঁিদি কাপোৰ",
+      "imageAsset": "endi_shawl.png",
+      "category": "clothing"
+    },
+    {
+      "id": "ner_house_01",
+      "label_en": "Jaapi",
+      "label_as": "জাপি",
+      "imageAsset": "jaapi.png",
+      "category": "household"
+    },
+    {
+      "id": "ner_house_02",
+      "label_en": "Xoraai",
+      "label_as": "বঁটা / বতাহ সঁফুৰা (শৰাই)",
+      "imageAsset": "xoraai.png",
+      "category": "household"
+    },
+    {
+      "id": "ner_house_03",
+      "label_en": "Bota",
+      "label_as": "বঁটা",
+      "imageAsset": "bota.png",
+      "category": "household"
+    },
+    {
+      "id": "ner_house_04",
+      "label_en": "Tamul-Paan Data (Betel Nut Bowl)",
+      "label_as": "তামোল-পান বাটা",
+      "imageAsset": "tamul_paan.png",
+      "category": "household"
+    },
+    {
+      "id": "ner_house_05",
+      "label_en": "Cane Basket (Duli)",
+      "label_as": "ডুলি / বাঁহৰ পাচি",
+      "imageAsset": "cane_basket.png",
+      "category": "household"
+    },
+    {
+      "id": "ner_house_06",
+      "label_en": "Clay Lamp (Xaki / Saki)",
+      "label_as": "মাটিৰ চাকি",
+      "imageAsset": "clay_lamp.png",
+      "category": "household"
+    },
+    {
+      "id": "ner_house_07",
+      "label_en": "Traditional Handloom",
+      "label_as": "তাঁতশাল",
+      "imageAsset": "handloom.png",
+      "category": "household"
+    }
+  ]
+}
