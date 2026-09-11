@@ -1,3 +1,0 @@
-package com.smritisathi.app.games;
-import android.app.*;import android.os.*;import android.content.*;import android.graphics.Color;import android.view.*;import android.widget.*;import com.smritisathi.app.core.*;
-public abstract class BaseGameActivity extends BaseActivity { long start; void gameHeader(String title,String sub){header(title);root.addView(UI.text(this,sub));start=System.currentTimeMillis();} void showFinish(int score,int accuracy){new AlertDialog.Builder(this).setTitle("Well done! 🎉").setMessage("Score: "+score+"\nAccuracy: "+accuracy+"%\n\nKeep going — every practice counts.").setPositiveButton("Back to Dashboard",(d,w)->{finish();}).setNegativeButton("Play Again",(d,w)->recreate()).setCancelable(false).show();}}
