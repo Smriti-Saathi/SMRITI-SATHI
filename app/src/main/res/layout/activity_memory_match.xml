@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    android:orientation="vertical">
+
+    <!-- Top Header Bar -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_header_gradient"
+        android:padding="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Memory Match 🪷"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnExitMatchGame"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    android:text="Exit Game"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="24dp"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1.5dp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvMatchStats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="Pairs Found: 0 / 6 • Attempts: 0"
+                android:textColor="#E0F2FE"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Subtitle instruction -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Tap any two cards to find matching pairs"
+        android:textColor="@color/textPrimary"
+        android:textSize="18sp" />
+
+    <!-- 4 Columns x 3 Rows Card Grid -->
+    <GridLayout
+        android:id="@+id/glMemoryGrid"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_margin="16dp"
+        android:columnCount="4"
+        android:rowCount="3"
+        android:alignmentMode="alignMargins"
+        android:useDefaultMargins="true">
+
+        <!-- 12 Card ImageButtons -->
+        <!-- Row 0 -->
+        <ImageButton
+            android:id="@+id/card0"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 1"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card1"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 2"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 3"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card3"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 4"
+            android:scaleType="fitCenter" />
+
+        <!-- Row 1 -->
+        <ImageButton
+            android:id="@+id/card4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 5"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card5"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 6"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card6"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 7"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card7"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 8"
+            android:scaleType="fitCenter" />
+
+        <!-- Row 2 -->
+        <ImageButton
+            android:id="@+id/card8"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 9"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card9"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 10"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 11"
+            android:scaleType="fitCenter" />
+
+        <ImageButton
+            android:id="@+id/card11"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_game_card_back"
+            android:contentDescription="Card 12"
+            android:scaleType="fitCenter" />
+
+    </GridLayout>
+
+</LinearLayout>

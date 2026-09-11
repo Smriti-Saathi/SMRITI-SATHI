@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smriti Sathi (स्मृति साथी) — Interactive Live Showcase</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-showcase-container">
+        <!-- Sidebar Navigation & Control Center -->
+        <aside class="showcase-sidebar">
+            <div class="brand-header">
+                <div class="brand-logo-icon">🌸</div>
+                <div class="brand-text">
+                    <h1>Smriti Sathi</h1>
+                    <span class="hindi-sub">स्मृति साथी • Care & Companion</span>
+                </div>
+            </div>
+
+            <div class="mode-switch-card">
+                <span class="section-badge">Active Persona</span>
+                <div class="role-tabs">
+                    <button class="role-tab active" id="tabPatientMode" onclick="switchRole('patient')">
+                        <span class="icon">👵</span> Patient Mode
+                    </button>
+                    <button class="role-tab" id="tabCaregiverMode" onclick="switchRole('caregiver')">
+                        <span class="icon">🩺</span> Caregiver Hub
+                    </button>
+                </div>
+            </div>
+
+            <nav class="feature-navigation">
+                <div class="nav-group-title">Patient Experiences (Min 18sp)</div>
+                <button class="nav-item active" onclick="navigateToScreen('screenPatientDashboard')">
+                    <span class="nav-icon">🏡</span> Patient Dashboard
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenGamesHub')">
+                    <span class="nav-icon">🎮</span> 4 Cognitive Games
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenReminders')">
+                    <span class="nav-icon">⏰</span> Today's Reminders
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenProgress')">
+                    <span class="nav-icon">🌸</span> Wellness Progress
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenMemoryMoments')">
+                    <span class="nav-icon">📸</span> Memory Moments
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenVoiceAssistant')">
+                    <span class="nav-icon">🎙️</span> Talk to Sathi (Voice)
+                </button>
+
+                <div class="nav-group-title">Caregiver Monitoring</div>
+                <button class="nav-item" onclick="navigateToScreen('screenCaregiverDashboard')">
+                    <span class="nav-icon">📊</span> Caregiver Overview
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenPatientList')">
+                    <span class="nav-icon">👥</span> Linked Patients List
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenPatientAnalytics')">
+                    <span class="nav-icon">📈</span> 7-Session Trajectory Chart
+                </button>
+                <button class="nav-item" onclick="navigateToScreen('screenCaregiverAlerts')">
+                    <span class="nav-icon">🛡️</span> Clinical Alerts Hub
+                </button>
+            </nav>
+
+            <div class="system-status-card">
+                <div class="status-row">
+                    <span class="status-dot online"></span>
+                    <span>Firestore Persistence: <strong>Active (Local)</strong></span>
+                </div>
+                <div class="status-row">
+                    <span class="status-dot online"></span>
+                    <span>Scoring Service: <strong>Rule-Based (Sec D/E)</strong></span>
+                </div>
+                <div class="status-row">
+                    <span class="status-dot online"></span>
+                    <span>Speech Engine: <strong>TTS & STT Ready</strong></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Device Mockup & Interactive Viewport -->
+        <main class="showcase-viewport">
+            <div class="device-phone-frame">
+                <!-- Phone Top Speaker & Notch -->
+                <div class="phone-speaker-notch">
+                    <div class="notch-speaker"></div>
+                    <div class="notch-camera"></div>
+                </div>
+
+                <!-- Android Status Bar -->
+                <div class="phone-status-bar">
+                    <span class="status-time" id="liveDeviceTime">10:30 AM</span>
+                    <div class="status-icons">
+                        <span>📶</span>
+                        <span>📶 5G</span>
+                        <span>🔋 98%</span>
+                    </div>
+                </div>
+
+                <!-- Screen Container -->
+                <div class="phone-screen-content" id="phoneScreenContainer">
+
+                    <!-- ================= 1. PATIENT DASHBOARD ================= -->
+                    <div class="screen-view active" id="screenPatientDashboard">
+                        <div class="screen-hero-header">
+                            <div class="header-top-row">
+                                <div class="app-mini-brand">
+                                    <span class="logo-emoji">🌸</span>
+                                    <span class="app-name-label">Smriti Sathi</span>
+                                </div>
+                                <button class="btn-ghost-logout" onclick="showToast('Logged out to rest. Take care!')">Rest 🌙</button>
+                            </div>
+                            <h2 class="patient-greeting" id="dashGreeting">Good morning, Ramesh Ji! 🌸</h2>
+                            <p class="patient-date" id="dashDate">Today is Friday, September 11, 2026</p>
+                        </div>
+
+                        <div class="screen-scrollable-body">
+                            <!-- Card 1: Play Today's Game -->
+                            <div class="card-elderly card-game-today" onclick="navigateToScreen('screenGamesHub')">
+                                <div class="card-icon-pill green">🎮 Today's Brain Exercise</div>
+                                <h3>Play Today's Game</h3>
+                                <p>Keep your memory sharp with fun, gentle daily brain exercises.</p>
+                                <button class="btn-primary-action green">Start Brain Game 🎮</button>
+                            </div>
+
+                            <!-- Card 2: Next Reminder Preview -->
+                            <div class="card-elderly card-reminder-preview" onclick="navigateToScreen('screenReminders')">
+                                <div class="card-icon-pill amber">⏰ Next Care Alert</div>
+                                <h3 id="previewReminderTitle">Blood Pressure Medicine</h3>
+                                <p class="reminder-time-highlight" id="previewReminderTime">⏰ Scheduled for 2:00 PM</p>
+                                <p class="reminder-dosage-text" id="previewReminderDosage">Dosage: 1 Tablet with water after lunch</p>
+                                <button class="btn-secondary-action">View All Reminders →</button>
+                            </div>
+
+                            <!-- Card 3: Memory Moments -->
+                            <div class="card-elderly card-memory-preview" onclick="navigateToScreen('screenMemoryMoments')">
+                                <div class="card-icon-pill purple">📸 Family Moments</div>
+                                <h3>Family Memory Moments</h3>
+                                <p>Revisit treasured photos and stories of your children and grandchildren.</p>
+                                <button class="btn-secondary-action purple">View Family Memories 🌸</button>
+                            </div>
+
+                            <!-- Card 4: Wellness Progress -->
+                            <div class="card-elderly card-wellness-preview" onclick="navigateToScreen('screenProgress')">
+                                <div class="card-icon-pill teal">🌿 Wellness Journey</div>
+                                <h3>My Cognitive Progress</h3>
+                                <p>Your brain is growing stronger and brighter with every practice session.</p>
+                                <button class="btn-secondary-action teal">View My Progress 🌟</button>
+                            </div>
+                        </div>
+
+                        <!-- Floating Sathi Mic Button -->
+                        <button class="fab-talk-sathi" onclick="navigateToScreen('screenVoiceAssistant')">
+                            <span class="fab-mic-icon">🎙️</span> Talk to Sathi
+                        </button>
+                    </div>
+
+                    <!-- ================= 2. COGNITIVE GAMES HUB ================= -->
+                    <div class="screen-view" id="screenGamesHub">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenPatientDashboard')">← Back</button>
+                            <h2>Cognitive Games Hub 🎮</h2>
+                            <p>Choose a fun exercise to practice memory, focus, and logic!</p>
+                        </div>
+                        <div class="screen-scrollable-body">
+                            <!-- Game 1: Memory Match -->
+                            <div class="card-game-selection" onclick="startMemoryMatchGame()">
+                                <div class="game-badge">Memory Recall</div>
+                                <h3>1. Memory Match (4x3 Grid)</h3>
+                                <p>Flip cards to find matching pairs of flowers, peacocks, and diyas.</p>
+                                <button class="btn-play-game-chip">Play Memory Match →</button>
+                            </div>
+
+                            <!-- Game 2: Object Recall -->
+                            <div class="card-game-selection" onclick="startObjectRecallGame()">
+                                <div class="game-badge">Visual Attention</div>
+                                <h3>2. Object Recall (5-Second Memorize)</h3>
+                                <p>Memorize 5 objects in 5 seconds, then pick them out from distractors.</p>
+                                <button class="btn-play-game-chip">Play Object Recall →</button>
+                            </div>
+
+                            <!-- Game 3: Pattern Recognition -->
+                            <div class="card-game-selection" onclick="startPatternGame()">
+                                <div class="game-badge">Logic & Reasoning</div>
+                                <h3>3. Pattern Recognition (5 Rounds)</h3>
+                                <p>Complete the visual 3-shape pattern with reaction-speed tracking.</p>
+                                <button class="btn-play-game-chip">Play Pattern Logic →</button>
+                            </div>
+
+                            <!-- Game 4: Simon Says -->
+                            <div class="card-game-selection" onclick="startSimonSaysGame()">
+                                <div class="game-badge purple">Working Memory & Sequence</div>
+                                <h3>4. Simon Says (Classic Sensory)</h3>
+                                <p>Watch the colorful buttons light up in sequence, then repeat the melody!</p>
+                                <button class="btn-play-game-chip purple">Play Simon Says →</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= GAME CONTAINER SCREEN ================= -->
+                    <div class="screen-view" id="screenActiveGame">
+                        <div class="subpage-header game-live-header">
+                            <button class="btn-back-header" onclick="confirmExitGame()">← Exit Game</button>
+                            <h2 id="activeGameTitle">Memory Match</h2>
+                            <div class="game-stats-ribbon" id="gameLiveStats">Score: 0 | Mistakes: 0</div>
+                        </div>
+                        <div class="screen-scrollable-body" id="gameInteractiveArea">
+                            <!-- Dynamically injected game board -->
+                        </div>
+                    </div>
+
+                    <!-- ================= 3. REMINDERS ACTIVITY ================= -->
+                    <div class="screen-view" id="screenReminders">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenPatientDashboard')">← Back</button>
+                            <div class="header-split">
+                                <div>
+                                    <h2>Today's Reminders ⏰</h2>
+                                    <p>Your daily medicines and wellness schedule</p>
+                                </div>
+                                <button class="btn-add-mini" onclick="openAddReminderModal()">+ Add</button>
+                            </div>
+                        </div>
+                        <div class="screen-scrollable-body" id="remindersListContainer">
+                            <!-- Reminders items rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- ================= 4. WELLNESS PROGRESS ACTIVITY ================= -->
+                    <div class="screen-view" id="screenProgress">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenPatientDashboard')">← Back</button>
+                            <h2>Your Wellness Journey 🌿</h2>
+                            <p>Every gentle exercise helps your mind stay joyful & bright!</p>
+                        </div>
+                        <div class="screen-scrollable-body">
+                            <div class="progress-category-card">
+                                <div class="category-info">
+                                    <span class="cat-name">🧠 Memory Recall</span>
+                                    <span class="cat-label" id="lblProgMemory">Flourishing & Strong 🌸</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill memory" style="width: 82%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-category-card">
+                                <div class="category-info">
+                                    <span class="cat-name">☀️ Attention & Focus</span>
+                                    <span class="cat-label" id="lblProgAttention">Steady & Focused 🌟</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill attention" style="width: 74%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-category-card">
+                                <div class="category-info">
+                                    <span class="cat-name">🔍 Pattern Recognition</span>
+                                    <span class="cat-label" id="lblProgRecognition">Sharp & Confident 🌟</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill recognition" style="width: 88%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="progress-category-card">
+                                <div class="category-info">
+                                    <span class="cat-name">🎵 Working Memory & Sequencing</span>
+                                    <span class="cat-label" id="lblProgSequencing">Great Rhythm & Focus 🎶</span>
+                                </div>
+                                <div class="progress-bar-track">
+                                    <div class="progress-bar-fill sequencing" style="width: 80%;"></div>
+                                </div>
+                            </div>
+
+                            <div class="quote-card-elderly">
+                                <p>"Gentle daily practice nourishes memory like water to a garden flower." 🌺</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 5. MEMORY MOMENTS ACTIVITY ================= -->
+                    <div class="screen-view" id="screenMemoryMoments">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenPatientDashboard')">← Back</button>
+                            <div class="header-split">
+                                <div>
+                                    <h2>Family Moments 📸</h2>
+                                    <p>Tap any picture to reveal who they are!</p>
+                                </div>
+                                <button class="btn-add-mini" onclick="openAddMemoryModal()">+ Add</button>
+                            </div>
+                        </div>
+                        <div class="screen-scrollable-body" id="memoryMomentsListContainer">
+                            <!-- Memory moments cards rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- ================= 6. TALK TO SATHI (VOICE) ================= -->
+                    <div class="screen-view" id="screenVoiceAssistant">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenPatientDashboard')">← Back</button>
+                            <h2>Talk to Sathi 🎙️</h2>
+                            <p>Your gentle listening memory companion</p>
+                        </div>
+                        <div class="screen-scrollable-body voice-body">
+                            <div class="mic-orb-container">
+                                <div class="mic-pulse-wave" id="micPulseWave"></div>
+                                <button class="mic-orb-button" id="btnLiveMic" onclick="toggleVoiceRecording()">
+                                    <span id="micOrbIcon">🎙️</span>
+                                </button>
+                            </div>
+
+                            <p class="voice-status-text" id="voiceStatusLabel">Tap microphone or tap a question below</p>
+
+                            <div class="voice-speech-bubble user" id="bubbleUserVoice">
+                                <span class="bubble-tag">You said:</span>
+                                <p id="textUserSpoken">"When is my medicine?"</p>
+                            </div>
+
+                            <div class="voice-speech-bubble sathi" id="bubbleSathiVoice">
+                                <div class="sathi-bubble-header">
+                                    <span class="bubble-tag">Sathi's Response:</span>
+                                    <button class="btn-replay-audio" onclick="replaySathiAudio()">🔊 Listen</button>
+                                </div>
+                                <p id="textSathiSpoken">"Your next medicine is Blood Pressure Tablet, scheduled for 2:00 PM. Remember to drink a glass of water when taking it! 💊"</p>
+                            </div>
+
+                            <div class="voice-intent-chips">
+                                <span class="chips-title">Quick Questions (Tap to ask):</span>
+                                <button class="voice-chip" onclick="simulateVoiceIntent('what do I have to do today')">
+                                    🌸 "What do I have to do today?"
+                                </button>
+                                <button class="voice-chip" onclick="simulateVoiceIntent('when is my medicine')">
+                                    💊 "When is my medicine?"
+                                </button>
+                                <button class="voice-chip" onclick="simulateVoiceIntent('start my memory game')">
+                                    🧠 "Start my memory game"
+                                </button>
+                                <button class="voice-chip" onclick="simulateVoiceIntent('play simon says')">
+                                    🎵 "Play Simon Says"
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 7. CAREGIVER DASHBOARD ================= -->
+                    <div class="screen-view" id="screenCaregiverDashboard">
+                        <div class="screen-hero-header caregiver">
+                            <div class="header-top-row">
+                                <div class="app-mini-brand">
+                                    <span class="logo-emoji">🩺</span>
+                                    <span class="app-name-label">Caregiver Hub</span>
+                                </div>
+                                <button class="btn-ghost-logout" onclick="showToast('Caregiver signed out')">Sign Out</button>
+                            </div>
+                            <h2>Welcome, Priya Sharma!</h2>
+                            <p>Currently monitoring: <strong>Ramesh Sharma (Father)</strong></p>
+                        </div>
+
+                        <div class="screen-scrollable-body">
+                            <div class="card-caregiver-summary">
+                                <div class="status-indicator-badge normal">
+                                    <span class="status-dot green"></span>
+                                    <span>Cognitive Status: Flourishing (Score 78)</span>
+                                </div>
+                                <p class="cg-last-active">Last active: 15 minutes ago (Simon Says: 4 rounds)</p>
+                                <div class="cg-quick-grid">
+                                    <button class="btn-cg-action" onclick="navigateToScreen('screenPatientAnalytics')">📈 View Trajectory</button>
+                                    <button class="btn-cg-action" onclick="navigateToScreen('screenCaregiverAlerts')">🛡️ View Alerts</button>
+                                </div>
+                            </div>
+
+                            <!-- Caregiver Navigation Shortcuts -->
+                            <div class="cg-nav-card" onclick="navigateToScreen('screenPatientList')">
+                                <div class="cg-nav-icon">👥</div>
+                                <div class="cg-nav-text">
+                                    <h4>My Linked Patients</h4>
+                                    <p>View linked family profiles & colored score dots</p>
+                                </div>
+                                <span class="chevron">›</span>
+                            </div>
+
+                            <div class="cg-nav-card" onclick="navigateToScreen('screenCaregiverAlerts')">
+                                <div class="cg-nav-icon">🛡️</div>
+                                <div class="cg-nav-text">
+                                    <h4>Cognitive & Care Alerts</h4>
+                                    <p>Automated score drop, missed medicine & inactivity checks</p>
+                                </div>
+                                <span class="chevron">›</span>
+                            </div>
+
+                            <div class="cg-nav-card" onclick="navigateToScreen('screenMemoryMoments')">
+                                <div class="cg-nav-icon">📸</div>
+                                <div class="cg-nav-text">
+                                    <h4>Family Memory Moments</h4>
+                                    <p>Add photos and relationships for reminiscence therapy</p>
+                                </div>
+                                <span class="chevron">›</span>
+                            </div>
+
+                            <div class="cg-nav-card" onclick="openLinkPatientModal()">
+                                <div class="cg-nav-icon">🔗</div>
+                                <div class="cg-nav-text">
+                                    <h4>Link Another Patient</h4>
+                                    <p>Enter 6-character invite code (e.g. SM7K9P)</p>
+                                </div>
+                                <span class="chevron">›</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 8. LINKED PATIENT LIST ================= -->
+                    <div class="screen-view" id="screenPatientList">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenCaregiverDashboard')">← Back</button>
+                            <div class="header-split">
+                                <div>
+                                    <h2>My Linked Patients 👥</h2>
+                                    <p>Longitudinal wellness status for family members</p>
+                                </div>
+                                <button class="btn-add-mini" onclick="openLinkPatientModal()">+ Link</button>
+                            </div>
+                        </div>
+                        <div class="screen-scrollable-body" id="patientListContainer">
+                            <!-- Linked patients rendered via JS -->
+                        </div>
+                    </div>
+
+                    <!-- ================= 9. PATIENT ANALYTICS (MPAndroidChart) ================= -->
+                    <div class="screen-view" id="screenPatientAnalytics">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenCaregiverDashboard')">← Back</button>
+                            <h2>Cognitive Analytics 📈</h2>
+                            <p>Longitudinal 7-session cognitive assessment chart</p>
+                        </div>
+                        <div class="screen-scrollable-body">
+                            <div class="analytics-stat-card">
+                                <div class="stat-main">
+                                    <span class="stat-number" id="chartCurrentScore">78 / 100</span>
+                                    <span class="stat-tier">Level: Moderate Tier</span>
+                                </div>
+                                <span class="status-dot-large green"></span>
+                            </div>
+
+                            <!-- Interactive Chart Visualization -->
+                            <div class="chart-container-card">
+                                <h4>Composite Score Trend (Last 7 Sessions)</h4>
+                                <div class="canvas-chart-wrapper">
+                                    <canvas id="canvasCognitiveChart" width="320" height="180"></canvas>
+                                </div>
+                                <div class="chart-axis-labels">
+                                    <span>S1</span><span>S2</span><span>S3</span><span>S4</span><span>S5</span><span>S6</span><span>S7</span>
+                                </div>
+                            </div>
+
+                            <!-- Sub-Domain Breakdown -->
+                            <div class="subdomain-card">
+                                <h4>Sub-Domain Performance</h4>
+                                <div class="subdomain-grid">
+                                    <div class="sub-col">
+                                        <span class="sub-val blue" id="subMemory">82%</span>
+                                        <span class="sub-name">Memory</span>
+                                    </div>
+                                    <div class="sub-col">
+                                        <span class="sub-val green" id="subAttention">74%</span>
+                                        <span class="sub-name">Attention</span>
+                                    </div>
+                                    <div class="sub-col">
+                                        <span class="sub-val amber" id="subRecognition">88%</span>
+                                        <span class="sub-name">Recognition</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ================= 10. CAREGIVER ALERTS ================= -->
+                    <div class="screen-view" id="screenCaregiverAlerts">
+                        <div class="subpage-header">
+                            <button class="btn-back-header" onclick="navigateToScreen('screenCaregiverDashboard')">← Back</button>
+                            <h2>Caregiver Alerts 🛡️</h2>
+                            <p>Automated real-time risk & compliance checks</p>
+                        </div>
+
+                        <!-- Mandatory Pinned Clinical Disclaimer -->
+                        <div class="pinned-disclaimer-banner">
+                            <span class="disc-icon">🛡️</span>
+                            <p class="disc-text">This platform supports cognitive engagement and monitoring. It is not a diagnostic tool.</p>
+                        </div>
+
+                        <div class="screen-scrollable-body" id="caregiverAlertsContainer">
+                            <!-- Computed alerts rendered via JS -->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modals (Add Reminder, Add Memory, Link Patient, Positive Overlay) -->
+    <div class="modal-backdrop" id="modalBackdrop" onclick="closeAllModals()"></div>
+
+    <!-- Positive Encouraging Overlay -->
+    <div class="modal-dialog-card positive-overlay" id="modalPositiveOverlay">
+        <div class="overlay-confetti">🎉 🌸 ⭐ 🌿</div>
+        <h2 id="overlayTitle">Brilliant Effort!</h2>
+        <p id="overlayMessage">Your brain is flourishing! Every small exercise helps your memory stay sharp and joyful.</p>
+        <div class="overlay-score-badge" id="overlayScoreBadge">Accuracy: 100% • Reaction: 680ms</div>
+        <button class="btn-overlay-close" onclick="closePositiveOverlay()">Continue to Dashboard 🌸</button>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-notification" id="appToast">Notification message</div>
+
+    <script src="app.js"></script>
+</body>
+</html>

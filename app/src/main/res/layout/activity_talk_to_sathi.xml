@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Header Hero -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/colorPrimary"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="24dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBackFromVoice"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="← Back"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:minHeight="48dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Talk to Sathi 🎙️"
+                android:textColor="@color/white"
+                android:textSize="28sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="I\'m here to listen, guide, and help you through your day"
+                android:textColor="@color/colorPrimaryContainer"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Main Voice Interaction Panel -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="20dp">
+
+            <!-- Mic Button Container -->
+            <FrameLayout
+                android:id="@+id/layoutMicContainer"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="8dp">
+
+                <!-- Outer Glow Ring -->
+                <View
+                    android:id="@+id/viewMicPulse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_rounded_card"
+                    android:backgroundTint="@color/sathiFabBg"
+                    android:alpha="0.25" />
+
+                <!-- Main Floating Mic Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnMicToggle"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_gravity="center"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:insetLeft="0dp"
+                    android:insetRight="0dp"
+                    app:cornerRadius="48dp"
+                    app:elevation="8dp"
+                    app:backgroundTint="@color/sathiFabBg"
+                    app:icon="@drawable/ic_mic"
+                    app:iconGravity="textStart"
+                    app:iconSize="44dp"
+                    app:iconTint="@color/white"
+                    android:contentDescription="Tap to speak with Sathi" />
+            </FrameLayout>
+
+            <!-- Voice Status Indicator -->
+            <TextView
+                android:id="@+id/tvVoiceStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:text="Tap the microphone to speak"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- User Transcription Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardUserTranscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/colorBorder"
+                app:strokeWidth="1dp"
+                app:cardBackgroundColor="@color/colorSurface">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="You asked:"
+                        android:textColor="@color/textTertiary"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvUserSpokenText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Press the mic and say something like \'When is my medicine?\'"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Sathi Response Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardSathiResponse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="3dp"
+                app:strokeColor="@color/reminderCardBorder"
+                app:strokeWidth="1.5dp"
+                app:cardBackgroundColor="@color/reminderCardBg">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="18dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <ImageView
+                            android:layout_width="26dp"
+                            android:layout_height="26dp"
+                            android:src="@drawable/ic_smriti_logo"
+                            android:contentDescription="Sathi voice response" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="10dp"
+                            android:text="Sathi\'s Response:"
+                            android:textColor="@color/reminderAccent"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnReplaySpeech"
+                            style="@style/Widget.MaterialComponents.Button.TextButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Replay 🔊"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="14sp"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvSathiResponseText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Hello! I am Sathi, your memory companion. How may I help you today?"
+                        android:textColor="@color/textPrimary"
+                        android:textSize="20sp"
+                        android:lineSpacingExtra="4dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Quick Voice Intent Suggestions -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Quick Questions (Tap to ask):"
+                android:textColor="@color/textSecondary"
+                android:textSize="17sp"
+                android:textStyle="bold" />
+
+            <!-- Chip 1: Today's Tasks -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipAgenda"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="🌸 \"What do I have to do today?\""
+                android:textColor="@color/colorPrimary"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                app:cornerRadius="14dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="1.5dp" />
+
+            <!-- Chip 2: Medicine Time -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipMedicine"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="💊 \"When is my medicine?\""
+                android:textColor="@color/reminderAccent"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                app:cornerRadius="14dp"
+                app:strokeColor="@color/reminderAccent"
+                app:strokeWidth="1.5dp" />
+
+            <!-- Chip 3: Memory Game -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipMemoryGame"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:text="🧠 \"Start my memory game\""
+                android:textColor="@color/gameButtonTint"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                app:cornerRadius="14dp"
+                app:strokeColor="@color/gameButtonTint"
+                app:strokeWidth="1.5dp" />
+
+            <!-- Chip 4: Simon Says -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/chipSimonSays"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="24dp"
+                android:text="🎵 \"Play Simon Says\""
+                android:textColor="@color/progSequencing"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:gravity="start|center_vertical"
+                app:cornerRadius="14dp"
+                app:strokeColor="@color/progSequencing"
+                app:strokeWidth="1.5dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

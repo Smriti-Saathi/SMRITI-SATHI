@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+  <!-- Outer soft glow circle -->
+  <path
+      android:fillColor="#1A5F7A"
+      android:pathData="M48,8 C25.9,8 8,25.9 8,48 C8,70.1 25.9,88 48,88 C70.1,88 88,70.1 88,48 C88,25.9 70.1,8 48,8 Z"/>
+  <!-- Inner accent leaf / heart memory motif -->
+  <path
+      android:fillColor="#57C5B6"
+      android:pathData="M48,24 C40,24 34,30 34,38 C34,49 48,64 48,64 C48,64 62,49 62,38 C62,30 56,24 48,24 Z"/>
+  <!-- Central golden spark of memory -->
+  <path
+      android:fillColor="#F8B400"
+      android:pathData="M48,34 C45.8,34 44,35.8 44,38 C44,40.2 45.8,42 48,42 C50.2,42 52,40.2 52,38 C52,35.8 50.2,34 48,34 Z"/>
+</vector>

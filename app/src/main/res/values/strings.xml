@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Smriti Sathi</string>
+    <string name="app_tagline">स्मृति साथी • Caring for every precious memory</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="login_subtitle">Sign in to continue your memory care journey</string>
+    <string name="email_hint">Email Address</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in">Sign In</string>
+    <string name="no_account_prompt">Don\'t have an account? </string>
+    <string name="register_now">Create Account</string>
+
+    <string name="register_title">Join Smriti Sathi</string>
+    <string name="register_subtitle">Personalized cognitive support & caregiver companion</string>
+    <string name="name_hint">Full Name</string>
+    <string name="confirm_password_hint">Confirm Password</string>
+    <string name="age_hint">Age</string>
+    <string name="phone_hint">Phone Number</string>
+    <string name="role_label">Select Your Role</string>
+    <string name="role_patient">Patient (Memory Care)</string>
+    <string name="role_caregiver">Caregiver (Family / Nurse)</string>
+    <string name="preferred_language_label">Preferred Language</string>
+    <string name="region_hint">Region / City / State</string>
+    <string name="caregiver_id_hint">Caregiver ID / Note (Optional)</string>
+    <string name="register_action">Register Now</string>
+    <string name="already_have_account">Already have an account? </string>
+
+    <string name="dashboard_title">Smriti Sathi Dashboard</string>
+    <string name="logout">Log Out</string>
+    <string name="invite_code_label">Patient Invite Code</string>
+    <string name="invite_code_hint">Share this 6-character code with your caregiver to link accounts</string>
+    <string name="copy_code">Copy Code</string>
+    <string name="code_copied">Invite code copied to clipboard!</string>
+
+    <!-- Section B Strings -->
+    <string name="play_todays_game_title">Play Today\'s Game</string>
+    <string name="play_todays_game_subtitle">Keep your memory sharp with fun, gentle daily brain exercises</string>
+    <string name="play_todays_game_btn">Start Brain Game 🎮</string>
+    <string name="next_reminder_title">Next Reminder</string>
+    <string name="no_pending_reminders">No pending reminders right now. You\'re all caught up! 🌿</string>
+    <string name="memory_moments_title">Memory Moments</string>
+    <string name="memory_moments_subtitle">Revisit treasured photos and stories of your loved ones 📸</string>
+    <string name="talk_to_sathi">Talk to Sathi 🎙️</string>
+    <string name="link_patient_title">Link to Your Patient</string>
+    <string name="link_patient_subtitle">Enter your loved one\'s 6-character invite code to connect</string>
+    <string name="invite_code_input_hint">6-Character Invite Code (e.g. SM7K9P)</string>
+    <string name="link_patient_btn">Verify &amp; Link Patient</string>
+    <string name="err_invalid_invite_code">Invalid invite code. Please verify the 6-character code with your patient.</string>
+    <string name="err_already_linked_you">You are already linked to this patient!</string>
+    <string name="err_already_linked_other">This patient is already linked to another caregiver.</string>
+    <string name="success_patient_linked">Patient successfully linked to your care account!</string>
+    <string name="caregiver_dashboard_title">Caregiver Hub</string>
+    <string name="caregiver_linked_patient_header">Currently Monitoring</string>
+    <string name="caregiver_no_patient">No patient linked yet. Connect using your patient\'s invite code.</string>
+    <string name="link_a_patient">Link a Patient</string>
+
+    <!-- Section F Strings -->
+    <string name="clinical_disclaimer">This platform supports cognitive engagement and monitoring. It is not a diagnostic tool.</string>
+    <string name="reminders_title">Today\'s Reminders</string>
+    <string name="btn_done">Done ✓</string>
+    <string name="btn_remind_later">Remind Later ⏰</string>
+    <string name="add_reminder">Add Reminder</string>
+    <string name="progress_title">Your Wellness Journey 🌿</string>
+    <string name="progress_encouragement">Every small exercise helps your brain stay bright and joyful!</string>
+    <string name="category_memory">Memory Recall</string>
+    <string name="category_attention">Attention &amp; Logic</string>
+    <string name="category_recognition">Pattern Recognition</string>
+    <string name="category_sequencing">Working Memory &amp; Sequencing</string>
+    <string name="tap_to_reveal">Tap to reveal who this is 🌸</string>
+    <string name="add_memory">Add Family Memory</string>
+    <string name="caregiver_alerts_title">Caregiver Alerts &amp; Monitoring</string>
+    <string name="patient_list_title">My Patients</string>
+    <string name="patient_detail_title">Patient Cognitive Analytics</string>
+
+    <!-- Language array -->
+    <string-array name="languages_array">
+        <item>Hindi (हिन्दी)</item>
+        <item>English</item>
+        <item>Bengali (বাংলা)</item>
+        <item>Marathi (मराठी)</item>
+        <item>Telugu (తెలుగు)</item>
+        <item>Tamil (தமிழ்)</item>
+        <item>Gujarati (ગુજરાતી)</item>
+        <item>Kannada (ಕನ್ನಡ)</item>
+        <item>Malayalam (മലയാളം)</item>
+        <item>Punjabi (ਪੰਜਾਬੀ)</item>
+    </string-array>
+</resources>

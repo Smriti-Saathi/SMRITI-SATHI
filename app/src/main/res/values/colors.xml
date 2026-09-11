@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand / Ocean Jade Palette -->
+    <color name="colorPrimary">#1A5F7A</color>
+    <color name="colorPrimaryDark">#113F52</color>
+    <color name="colorPrimaryContainer">#E0F2FE</color>
+    <color name="colorOnPrimaryContainer">#034A64</color>
+
+    <!-- Secondary Teal & Sage -->
+    <color name="colorSecondary">#159895</color>
+    <color name="colorSecondaryLight">#57C5B6</color>
+    <color name="colorAccent">#F8B400</color>
+
+    <!-- Neutral & Backgrounds -->
+    <color name="colorBackground">#F8FAFC</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorSurfaceVariant">#F1F5F9</color>
+    <color name="colorBorder">#E2E8F0</color>
+    <color name="colorDivider">#CBD5E1</color>
+
+    <!-- Typography / Text Colors (High Contrast WCAG AAA) -->
+    <color name="textPrimary">#0F172A</color>
+    <color name="textSecondary">#475569</color>
+    <color name="textTertiary">#94A3B8</color>
+    <color name="textOnPrimary">#FFFFFF</color>
+
+    <!-- Status & Badges -->
+    <color name="patientPillBg">#E6FFFA</color>
+    <color name="patientPillText">#047857</color>
+    <color name="caregiverPillBg">#EFF6FF</color>
+    <color name="caregiverPillText">#1D4ED8</color>
+
+    <!-- Dashboard & Elderly Accessibility Accents -->
+    <color name="gameCardBg">#F0FDF4</color>
+    <color name="gameCardBorder">#86EFAC</color>
+    <color name="gameButtonTint">#16A34A</color>
+
+    <color name="reminderCardBg">#FEFCE8</color>
+    <color name="reminderCardBorder">#FDE047</color>
+    <color name="reminderAccent">#CA8A04</color>
+
+    <color name="memoryCardBg">#FDF4FF</color>
+    <color name="memoryCardBorder">#F0ABFC</color>
+    <color name="memoryAccent">#9333EA</color>
+
+    <color name="sathiFabBg">#F59E0B</color>
+    <color name="sathiFabText">#FFFFFF</color>
+
+    <color name="colorSuccess">#10B981</color>
+    <color name="colorWarning">#F59E0B</color>
+    <color name="colorError">#DC2626</color>
+    <color name="colorErrorBg">#FEF2F2</color>
+
+    <!-- Score Status Dots (Caregiver Patient List) -->
+    <color name="dotGreen">#10B981</color>
+    <color name="dotAmber">#F59E0B</color>
+    <color name="dotRed">#EF4444</color>
+
+    <!-- Clinical Disclaimer Card (Caregiver Alerts) -->
+    <color name="disclaimerBg">#EFF6FF</color>
+    <color name="disclaimerBorder">#93C5FD</color>
+    <color name="disclaimerText">#1E40AF</color>
+
+    <!-- Progress Bar Gradient Colors -->
+    <color name="progMemory">#3B82F6</color>
+    <color name="progAttention">#10B981</color>
+    <color name="progRecognition">#F59E0B</color>
+    <color name="progSequencing">#8B5CF6</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+</resources>
